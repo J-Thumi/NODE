@@ -1,2 +1,5 @@
 to run js code you can do so in a terminal 
        node fileName e.g node test to run test.js file
+
+we can use modules in node
+we can run a file in another file using require('path')
