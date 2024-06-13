@@ -15,14 +15,24 @@ const readStream=fs.createReadStream('blog.txt',{encoding:'utf8'})
 
 
 //add an on event listener
-readStream.on('data',(chunk)=>{
-console.log('=====NEW CHUNK======')
-console.log(chunk)
-
-writeStream.write('\n NEW CHUNK \n')
-writeStream.write(chunk)
-})
 
 
+        // readStream.on('data',(chunk)=>{
+        // console.log('=====NEW CHUNK======')
+        // console.log(chunk)
 
-//we 
+        // writeStream.write('\n NEW CHUNK \n')
+        // writeStream.write(chunk)
+        // })
+
+
+
+//we can use pipes to transfer data from readable to writable file
+// the above long code can be replaced by piping
+
+readStream.pipe(writeStream)
+
+
+///the above can be summarized to:
+
+//fs.createReadStream('./blog.txt', {encoding: 'utf8'}).pipe(fs.createWriteStream('./blog2'))
