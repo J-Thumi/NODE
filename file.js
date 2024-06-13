@@ -28,4 +28,45 @@ fs.readFile('./write.txt',(err,data)=>{
     console.log(data.toString())
 })
 
-//if the file to be writen on does not exist itis just created
+//if the file to be writen on does not exist it is just created
+
+//creating directory
+if (!fs.existsSync('./assets')){
+    fs.mkdir('./assets',(err)=>{
+        if(err){
+    console.log(err)
+        }
+        console.log('assets folder created')
+    })
+}
+
+//deleting folder
+else{
+    fs.rmdir('./assets',(err)=>{
+        if(err){
+            console.log(err)
+        }
+        console.log('assets folder deleted')
+    })
+}
+
+
+//deleting files
+
+//first look if it exists
+
+if(fs.existsSync('./made.txt')){
+    fs.unlink('./made.txt',(err)=>{
+        if(err){
+            console.log(err)
+        }
+        console.log('made.txt file deleted')
+    })
+}
+else{
+    fs.writeFile('made.txt','This file was made from javascript',()=>{
+        console.log('made.txt file created')
+    })
+}
+
+
