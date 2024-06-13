@@ -3,3 +3,7 @@ to run js code you can do so in a terminal
 
 we can use modules in node
 we can run a file in another file using require('path')
+
+we can create ,write and delete files in js
+we can also create and delete directories in js
+the call module for this is fs standing for file system

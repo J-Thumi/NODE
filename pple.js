@@ -1,6 +1,7 @@
 const people=['Jos','jane','Precious']
 const ages =[12,34,54,23,89]
-console.log(people)
+
+//console.log(people)
 
 
 //we must manually export whatever we want in the other file
