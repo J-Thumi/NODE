@@ -6,7 +6,23 @@ const http=require('http')
 //the createserver module takes a function as an arg the function write what to be returned when server receives a request
 //the function takes request and response parameters
 const server=http.createServer((req,res)=>{
-console.log('request made')
+console.log(req.url , req.method)
+
+
+//in the response 
+//1. set Header  specify Content type
+//2. content the response to return
+//3. end the response
+
+//we can return plain text
+        //res.setHeader('Content-Type','text/Plain')
+        //res.write('Hello Ninja')
+//apart from just returning plain text we can also return html 
+        res.setHeader('Content-Type','text/html')
+        res.write('<p>Hello Ninja</p>')
+        res.write('<p>Hello again Ninja</p>')
+
+res.end()
 })
 
 server.listen(3000,'localhost',()=>{
