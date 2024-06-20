@@ -2,13 +2,13 @@
 //we create a server via a command line not like in PHP where there are servers such as apache or xamp
 
 const http=require('http')
+const fs=require('fs')
+
 
 //the createserver module takes a function as an arg the function write what to be returned when server receives a request
 //the function takes request and response parameters
 const server=http.createServer((req,res)=>{
 console.log(req.url , req.method)
-
-
 //in the response 
 //1. set Header  specify Content type
 //2. content the response to return
@@ -19,10 +19,25 @@ console.log(req.url , req.method)
         //res.write('Hello Ninja')
 //apart from just returning plain text we can also return html 
         res.setHeader('Content-Type','text/html')
-        res.write('<p>Hello Ninja</p>')
-        res.write('<p>Hello again Ninja</p>')
 
-res.end()
+
+        // res.write('<head> <link rel="stylesheet" href="#"> </head>')
+        // res.write('<p>Hello Ninja</p>')
+        // res.write('<p>Hello again Ninja</p>')
+
+        //sending html this way is not effective
+
+        //we can read a html external file which is better
+fs.readFile('./views/index.html',(err,data)=>{
+if(err){
+        console.log(err)
+        res.end()
+}
+else{
+        res.write(data)
+        res.end()
+}       
+})
 })
 
 server.listen(3000,'localhost',()=>{
