@@ -19,6 +19,31 @@ console.log(req.url , req.method)
         //res.write('Hello Ninja')
 //apart from just returning plain text we can also return html 
         res.setHeader('Content-Type','text/html')
+let path='./views'
+switch(req.url){
+        case '/':
+                path +='/index.html'
+                res.statusCode=200
+                break
+        case '/about':
+                path+='/about.html'
+                res.statusCode=200
+                break
+        case '/about-me':
+                res.statusCode=301
+                res.setHeader("Location",'about')
+                res.end()
+                break
+        default:
+        
+                path+='/404.html'
+                res.statusCode=404
+                break
+}
+                //the above way of getting html files/ routering is not effective hence we can use express framework it is a 3rd party package
+                
+
+
 
 
         // res.write('<head> <link rel="stylesheet" href="#"> </head>')
@@ -28,14 +53,22 @@ console.log(req.url , req.method)
         //sending html this way is not effective
 
         //we can read a html external file which is better
-fs.readFile('./views/index.html',(err,data)=>{
+fs.readFile(path,(err,data)=>{
 if(err){
         console.log(err)
         res.end()
 }
 else{
-        res.write(data)
-        res.end()
+        //res.write(data)
+        //the res.write() is better to use when writing multiple lines separately
+
+        //here we can pass the data to the res.end(data)
+       
+        //status code describe typr of response sent to browser
+        //100-informational,200-success,300-redirects,400-client error,500-server error
+        //we can add status code to the response
+        
+        res.end(data)
 }       
 })
 })

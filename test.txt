@@ -7,3 +7,10 @@ we can run a file in another file using require('path')
 we can create ,write and delete files in js
 we can also create and delete directories in js
 the call module for this is fs standing for file system
+
+
+to manage 3rd party packkages we use npm node package manager
+
+
+to avoid restarting server each time we can install a package called nodemon globally npm install -g nodemon 
+then to run a server and enable auto restarts instead of node filename use nodemon filename
