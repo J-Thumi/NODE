@@ -29,6 +29,8 @@ switch(req.url){
                 path+='/about.html'
                 res.statusCode=200
                 break
+
+                // On the World Wide Web, HTTP 301 is the HTTP response status code for 301 Moved Permanently. It is used for permanent redirecting, meaning that links or records returning this response should be updated.
         case '/about-me':
                 res.statusCode=301
                 res.setHeader("Location",'about')

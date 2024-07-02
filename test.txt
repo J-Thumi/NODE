@@ -14,3 +14,11 @@ to manage 3rd party packkages we use npm node package manager
 
 to avoid restarting server each time we can install a package called nodemon globally npm install -g nodemon 
 then to run a server and enable auto restarts instead of node filename use nodemon filename
+
+
+
+express allows us to easily manage our routing
+go to the express page on the npm website
+
+
+EJS (Embedded JavaScript): A popular templating engine with support for embedding JavaScript code within templates.

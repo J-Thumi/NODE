@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Node tutorial <%=title%></title>
+    <!-- to access the the data passed before  -->
+</head>
+<body>
+
+<!-- while passing dynamic data we use <% %> -->
+
+ <% const name = "John" %>
+
+
+ <!-- while passing it in the web use <%= %> -->
+<p><%=name%></p>
+    <nav>
+        <div class="site-title">
+            <a href="/"><h1>Blog site</h1></a>
+            <p>A ninja site</p>
+        </div>
+        <ul>
+            <li ><a href="/">blogs</a></li>
+            <li><a href="/about">about</a></li>
+            <li><a href="/blog/create">New blog</a></li>
+        </ul>
+    </nav>
+
+    <div class="blogs content">
+        <h2>All Blogs</h2>
+
+       <% if(blogs.length>0){ %>
+        <% blogs.forEach(blog=>{%>
+            <h3 class="title"><%= blog.title %></h3>
+            <p class="snippet"><%=  blog.snippet %></p>
+            <% })%>
+       <% } else{ %>
+<p>There are no blogs to display...</p>
+       <%}%>
+       <!-- this whole process is called server side rendering -->
+       
+    </div>
+</body>
+</html>
