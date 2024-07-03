@@ -1,25 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Node tutorial <%=title%></title>
-</head>
+    <%- include('./partials/head.ejs')%>
 <body>
 
 
 
-    <nav>
-        <div class="site-title">
-            <a href="/"><h1>Blog site</h1></a>
-            <p>A ninja site</p>
-        </div>
-        <ul>
-            <li ><a href="/">blogs</a></li>
-            <li><a href="/about">about</a></li>
-            <li><a href="/blog/create">New blog</a></li>
-        </ul>
-    </nav>
+    <%- include('./partials/nav.ejs')%>
 
     <div class="create-blog content">
         <form > 

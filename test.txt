@@ -22,3 +22,13 @@ go to the express page on the npm website
 
 
 EJS (Embedded JavaScript): A popular templating engine with support for embedding JavaScript code within templates.
+
+
+always remember when you find yourself repeating code there is something you are not doing right
+we can avoid repeating using partials
+example in the practice files the nav and headers were repeating so 
+you create a partials folder in the views in it create individal files of repeating codes with ejs extension
+to include the code where needed use
+              <%- include('./partials/nav.ejs')%>
+<%=%> leaves out special characters
+not repeating also makes editing easy
