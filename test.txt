@@ -1,3 +1,4 @@
+all installed dependencies are stored in the package.json
 to run js code you can do so in a terminal 
        node fileName e.g node test to run test.js file
 
@@ -32,3 +33,16 @@ to include the code where needed use
               <%- include('./partials/nav.ejs')%>
 <%=%> leaves out special characters
 not repeating also makes editing easy
+
+
+the css can go in the header file
+
+
+middleware is code that runs in the server btwn getting a request and psending a response
+app.use() runs regardless of the route('/','/about'...) or method (get,post,delete...)
+the code runs up down so app.use should come after all app.get are written
+
+
+static files such as css and images can not be accessed directly to access them we can use static midddleware that comes along with express
+
+app.use(express.static('public'))//any file in public folder will be accessible in all files

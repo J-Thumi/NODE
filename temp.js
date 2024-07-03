@@ -1,6 +1,6 @@
 const express=require('express')
 const app=express()
-
+const morgan=require('morgan')
 //register the view engine
 //EJS (Embedded JavaScript): A popular templating engine with support for embedding JavaScript code within templates.
 
@@ -11,6 +11,32 @@ const app=express()
 //the templates are just regular html code but the file extenssion is ejs
 app.set('view engine','ejs')
 app.listen(3000)
+
+            //creating my own middleware
+// app.use((req,res,next)=>{
+// console.log('new request')
+// console.log('host',req.hostname)
+// console.log('path',req.path)
+// console.log('method',req.method)
+// next()
+// })
+
+//when running the code with the above code the browser hangs since it dont know what to do next because the request was satisfied 
+//though not the request we wanted the since we wanted a / or /about but is when running it hits a app.use() the code in it is the one exequted
+//to avoid this we will use next()
+//pass next as aparameter in the function in the app.use((req,res,next)=>{}) and call it in the body of the function
+
+
+        //using third party middleware
+        //some are available in morgan 
+        //npm install morgan
+        //then require it after express was requred
+        //to use the middleware
+        app.use(morgan('dev'))
+//middleware and static
+
+app.use(express.static('public'))//any file in public folder will be accessible in all files
+
 
 //rendering a view
 //name of view minus extenssion
