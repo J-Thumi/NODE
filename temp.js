@@ -63,6 +63,15 @@ app.get('/blog/create',(req,res)=>{
 //     res.redirect('/about')
 // })
 
+
+
+//Mongodb
+
+const {conectToDb, getDb} = require('./db')
+app.get('/books',(req,res)=>{
+    res.json({msg:'hello'})
+})
+
 app.use((req,res)=>{
     res.status(404).render('404',{title:'404'})
 })
