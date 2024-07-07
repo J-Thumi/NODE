@@ -2,14 +2,14 @@ const { MongoClient } = require('mongodb');
 
 //use let not const to def the db connection since it will change 
 let dbConection
-
+const uri ='mongodb+srv://josphatthumi:<password>@cluster0.bqncmmu.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0' //the connection string fron atlas
 //we are not using the dbconnection here so it must be exported
 //we are exporting 2 functions so they should be in object syntax
 module.exports={
     //the connectToDb function takes another function as an arg which is to run after the connection is established
     connectToDb: (cb)=>{//this function connects to the database
         //mongodb://localhost:27017/dbName
-        MongoClient.connect("mongodb://localhost:27017/Bookstore")//connect to the database
+        MongoClient.connect(uri)//connect to the database
         //it is an asyc fuct so use promises
 
         .then((client)=>{//when we connect to the database successfully we get a value as an arguement
