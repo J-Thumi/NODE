@@ -36,7 +36,7 @@ app.get('/books',(req,res)=>{
     let books=[]
 //in mongo console to get specific collection : db.Books
     //here we use the collection method
-    db.collection('Books')
+    db.collection('store')
     .find()
     .sort({author:1})
 

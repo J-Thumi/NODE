@@ -2,7 +2,7 @@ const { MongoClient } = require('mongodb');
 
 //use let not const to def the db connection since it will change 
 let dbConection
-const uri ='mongodb+srv://josphatthumi:<password>@cluster0.bqncmmu.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0' //the connection string fron atlas
+const uri ='mongodb+srv://josphatthumi:147673044Jos.@cluster0.bqncmmu.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0' //the connection string fron atlas
 //we are not using the dbconnection here so it must be exported
 //we are exporting 2 functions so they should be in object syntax
 module.exports={
